@@ -15,6 +15,12 @@ repositories {
 configurations {
     // for dependencies that are needed for development only
     developmentOnly
+
+    all {
+        resolutionStrategy {
+            force 'io.micronaut.elasticsearch:micronaut-elasticsearch:2.0.0.BUILD-SNAPSHOT'
+        }
+    }
 }
 
 dependencies {
