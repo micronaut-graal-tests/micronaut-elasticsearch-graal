@@ -1,6 +1,6 @@
 plugins {
     id "com.diffplug.eclipse.apt" version "3.22.0"
-    id "com.github.johnrengelman.shadow" version "5.2.0"
+    id "com.github.johnrengelman.shadow" version "6.0.0"
     id "application"
 }
 
@@ -8,6 +8,7 @@ version "0.1"
 group "micronaut.example"
 
 repositories {
+    mavenCentral()
     jcenter()
     maven { url "https://oss.jfrog.org/oss-snapshot-local" }
 }
@@ -15,12 +16,6 @@ repositories {
 configurations {
     // for dependencies that are needed for development only
     developmentOnly
-
-    all {
-        resolutionStrategy {
-            force 'io.micronaut.elasticsearch:micronaut-elasticsearch:2.0.0.BUILD-SNAPSHOT'
-        }
-    }
 }
 
 dependencies {
@@ -40,14 +35,13 @@ dependencies {
     implementation("io.micronaut:micronaut-http-client")
     implementation("io.micronaut.elasticsearch:micronaut-elasticsearch")
 
-    // Enable logging on JVM
-    runtimeOnly 'org.slf4j:log4j-over-slf4j:1.7.30'
+    // Enable Elasticsearch logging on JVM with Logback
+    runtimeOnly('org.slf4j:log4j-over-slf4j:1.7.30')
+    runtimeOnly("ch.qos.logback:logback-classic")
 
     // Additional dependencies for logging to work on GraalVM
-    implementation 'org.apache.logging.log4j:log4j-api:2.13.3'
-    implementation 'org.apache.logging.log4j:log4j-core:2.13.3'
-
-    runtimeOnly("ch.qos.logback:logback-classic")
+    implementation('org.apache.logging.log4j:log4j-api:2.13.3')
+    implementation('org.apache.logging.log4j:log4j-core:2.13.3')
 
     testAnnotationProcessor(enforcedPlatform("io.micronaut:micronaut-bom:$micronautVersion"))
     testAnnotationProcessor("io.micronaut:micronaut-inject-java")
@@ -93,6 +87,3 @@ tasks.withType(JavaExec) {
     classpath += configurations.developmentOnly
     jvmArgs('-XX:TieredStopAtLevel=1', '-Dcom.sun.management.jmxremote')
 }
-
-
-
