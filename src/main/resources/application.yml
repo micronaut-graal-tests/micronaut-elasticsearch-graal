@@ -1,8 +1,0 @@
-micronaut:
-  application:
-    name: micronaut-elasticsearch-graal
-
-elasticsearch:
-  httpHosts: http://${ELASTICSEARCH_HOST:localhost}:${ELASTICSEARCH_REST_PORT:9200}
-  indexes:
-    movies: micronaut.movies
