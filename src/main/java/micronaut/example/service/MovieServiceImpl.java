@@ -2,8 +2,9 @@ package micronaut.example.service;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.micronaut.context.annotation.Value;
-import micronaut.example.exception.MovieServiceException;
+import jakarta.inject.Singleton;
 import micronaut.example.controller.SearchMovieResponse;
+import micronaut.example.exception.MovieServiceException;
 import org.elasticsearch.action.index.IndexRequest;
 import org.elasticsearch.action.index.IndexResponse;
 import org.elasticsearch.action.search.SearchRequest;
@@ -15,8 +16,6 @@ import org.elasticsearch.index.query.QueryBuilders;
 import org.elasticsearch.search.builder.SearchSourceBuilder;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import javax.inject.Singleton;
 
 @Singleton
 public class MovieServiceImpl implements MovieService {
