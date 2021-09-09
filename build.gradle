@@ -38,11 +38,15 @@ dependencies {
 
 }
 
-
 application {
     mainClass.set("micronaut.example.Application")
 }
+
 java {
     sourceCompatibility = JavaVersion.toVersion("8")
     targetCompatibility = JavaVersion.toVersion("8")
+}
+
+nativeImage {
+    imageName("elasticsearch")
 }
