@@ -4,7 +4,7 @@ Test application for Micronaut Elasticsearch and GraalVM.
 
 To run Elasticsearch in Docker:
 ```
-docker run -it --rm -p 9200:9200 -p 9300:9300 -e "discovery.type=single-node" docker.elastic.co/elasticsearch/elasticsearch:7.8.0
+docker run -it --rm -p 9200:9200 -p 9300:9300 -e "discovery.type=single-node" docker.elastic.co/elasticsearch/elasticsearch:7.12.1
 ```
 
 To test the application:
