@@ -8,9 +8,6 @@ public class Movie {
     private String imdb;
     private String title;
 
-//    public Movie() {
-//    }
-
     public Movie(String imdb, String title) {
         this.imdb = imdb;
         this.title = title;
