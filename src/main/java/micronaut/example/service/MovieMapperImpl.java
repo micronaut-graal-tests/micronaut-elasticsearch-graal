@@ -3,7 +3,7 @@ package micronaut.example.service;
 import jakarta.inject.Singleton;
 import micronaut.example.controller.CreateMovieRequest;
 import micronaut.example.controller.SearchMovieResponse;
-import org.elasticsearch.common.unit.TimeValue;
+import org.elasticsearch.core.TimeValue;
 import org.elasticsearch.search.SearchHit;
 import org.elasticsearch.search.SearchHits;
 
