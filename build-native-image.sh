@@ -1,4 +1,4 @@
 #!/bin/bash
 
-./gradlew nativeImage
-cp build/native-image/elasticsearch .
+./gradlew nativeCompile
+cp build/native/nativeCompile/elasticsearch .
