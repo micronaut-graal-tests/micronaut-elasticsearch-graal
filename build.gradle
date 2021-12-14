@@ -29,9 +29,6 @@ dependencies {
     // Enable Elasticsearch logging on JVM with Logback
     runtimeOnly('org.slf4j:log4j-over-slf4j:1.7.30')
     runtimeOnly("ch.qos.logback:logback-classic")
-
-    runtimeOnly("ch.qos.logback:logback-classic")
-
 }
 
 application {
